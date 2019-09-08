@@ -4,8 +4,7 @@ var compChoice = alf[compIndex];
 
 console.log("Secret answer is: " + compChoice);
 
-
-
+var counter = 0;
 
 document.onkeyup = function (event) {
     var letter = event.key.toLowerCase();
@@ -13,8 +12,12 @@ document.onkeyup = function (event) {
     var change = document.querySelector("#change");
     change.innerHTML = letter;
 
+    counter++;
+    console.log(counter);
+
     if (letter === compChoice) {
         alert(compChoice.toUpperCase() + " is right, You Won!");
+        alert("It only took you " + counter + " tries!")
     }
     else {
         alert(letter.toUpperCase() + " is wrong, Try Again!");
